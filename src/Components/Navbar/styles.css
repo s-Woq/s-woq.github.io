@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Bebas+Neue&display=swap');
+.title{
+    font-family: "Aboreto";
+    font-size: 34px;
+    font-weight: lighter;
+}
+.sign{
+    font-family: "Aboreto";
+    font-size: 24px;
+    color: #F3BF46;
+    font-weight: lighter;
+    transition: transform 1s ease-in-out, color 1s ease-in-out;
+
+    
+}
+.nav{
+    animation : fadeToTransparent 2s ease-in-out forwards;
+    border-radius: 20px;
+    
+}
+.sign:hover{
+    color:#7b5b0e;
+    transition: 1s ease;
+    
+}
+
+
+@keyframes fadeToTransparent{
+    0%{
+        background-color: rgba(145, 143, 143, 0.4);
+
+    }
+    100%{
+        background-color: transparent;
+    }
+}
+
+@media (max-width:850px) {
+        
+    
+    
+}
+

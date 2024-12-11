@@ -1,0 +1,20 @@
+.s-up{
+    width: 40vw;
+    height: 100vh;
+    background-color: black;
+}
+.announcement{
+    border:1px solid rgba(80, 80, 80, 0.393);
+    border-radius: 10px;
+    background-color: rgba(80,80,80,.2);
+    padding:6px;
+    color:white;
+    text-align: center;
+    width:fit-content;
+
+}
+.sign-up-box{
+    border: 1px solid white;
+    display: flex;
+    justify-content: space-around;
+}

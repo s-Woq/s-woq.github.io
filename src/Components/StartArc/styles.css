@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Bebas+Neue&display=swap');
+.start{
+    font-family: "Aboreto";
+    font-size: 24px;
+    color:white;
+}
+.button{
+    background-color:#2467e7 ;
+    transition: 1s ease-in-out;
+    border:none;
+}
+.start-holder{
+    width:10vw;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    margin:  auto;
+
+}
+.button:hover{
+    transform: scale(1.1);
+    background-color: #081632;
+    transition: 1s ease-in-out;
+    
+}
+
+@media (max-width:850px) {
+
+    .start-holder{
+        width:100vw;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        height: fit-content;
+        margin: auto;
+        
+    
+    }
+    
+}
