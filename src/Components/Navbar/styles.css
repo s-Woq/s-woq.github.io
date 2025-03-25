@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Bebas+Neue&display=swap');
+
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.title {
+    font-family: "Aboreto";
+    font-size: 34px;
+    font-weight: lighter;
+}
+
+.sign {
+    font-family: "Aboreto";
+    font-size: 24px;
+    color: #F3BF46;
+    font-weight: lighter;
+    transition: transform 1s ease-in-out, color 1s ease-in-out;
+}
+
+.sign:hover {
+    color: #7b5b0e;
+    transition: 1s ease;
+}
+
+.nav {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+   
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Default Styles for `.tt` */
+.tt {
+    position: relative;
+    font-size: 1em;
+    margin: 0 auto; /* Center by default */
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+/* Tablet Styles (850px to 1246px) */
+@media (min-width: 850px) and (max-width: 1246px) {
+    .tt {
+        left: 1vw;
+    }
+
+    .sign {
+        justify-content: space-between;
+    }
+}
+
+/* Desktop Styles (1181px and above) */
+@media (min-width: 1181px) {
+    .tt {
+        /* left: 10vw; */
+    }
+}
+
+/* Small Devices (Below 850px) */
+@media (max-width: 849px) {
+    .tt {
+        font-size: 16px; /* Smaller font size */
+        left: 0;
+        justify-content: center;
+    }
+
+    .nav {
+        flex-direction: column; /* Stack navigation */
+        justify-content: flex-start;
+    }
+
+    .sign {
+        font-size: 16px;
+        justify-content: center;
+    }
+}
+
+/* Very Small Devices (Below 390px) */
+@media (max-width: 390px) {
+    .tt {
+        font-size: 14px;
+        justify-content: center;
+    }
+
+    .nav {
+        width: 100%; /* Avoid transform scale */
+        justify-content: flex-start;
+    }
+
+    body {
+        background-size: cover;
+        background-position: center;
+    }
+
+    .sign {
+        font-size: 12px;
+        justify-content: flex-start; /* Align properly */
+    }
+}

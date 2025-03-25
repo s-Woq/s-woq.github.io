@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+.s-up{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255,255,255,.4);
+    color:black;
+    display: flex;
+}
+.announcement{
+    border:1px solid rgba(80, 80, 80, 0.393);
+    border-radius: 10px;
+    background-color: rgba(80,80,80,.2);
+    padding:6px;
+    color:black;
+    text-align: center;
+    width:fit-content;
+
+}
+.sign-up-box{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50vw;
+    overflow: hidden;   
+    height: 100vh;
+    position: absolute;
+    left: 50vw;
+}
+label{
+    color:black
+}
+input{
+    /* border: 1px solid black; */
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgba(255,255,255,.7);
+}
+.a-n{
+    font-size:2em;
+}
+.process{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 50vw;
+    height: 100vh;
+    
+    background-color: rgba(109, 28, 28, 0.9);
+}
+.icons-pg{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-family: "Josefin Sans",arial;
+    font-size: 4em;
+    /* justify-content: center start; */
+    align-items: center;
+    gap: 20px;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(236, 233, 233, 0.9);
+    
+
+}
+.footer-gs{
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    width: 49vw;
+    height: 100vh;
+    background-color: transparent;
+    position: absolute;
+    height: 10vh;
+    bottom: 0px;
+    gap:150px;
+}
