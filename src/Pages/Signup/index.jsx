@@ -31,7 +31,22 @@ function Signup() {
 
   return (
     <div className="s-up">
-      <div className="sign-up-box text-white">ARC NOIR
+      <div className="process">
+        <div className="icons-pg">
+        <p>Getting Started</p>
+        <ion-icon name="person-outline"></ion-icon>
+        <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+        <ion-icon name="mail-open-outline"></ion-icon>
+        <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+        <ion-icon name="balloon-outline"></ion-icon>
+        </div>
+        <div className="footer-gs"> 
+          <a href="../"><div><p><ion-icon name="return-down-back-outline"></ion-icon>Home</p></div></a>
+          <a href="../login"><div><p>Log In</p></div></a>
+        </div>
+
+      </div>
+      <div className="sign-up-box text-white"><p className="a-n"> <ion-icon name="pin-outline"></ion-icon>Sign Up</p>
       
         <form onSubmit={handleSubmit}>
           {/* Name Input */}
@@ -98,7 +113,7 @@ function Signup() {
           {errorMessage && <div className="error-message">{errorMessage}</div>}
 
           {/* Submit Button */}
-          <button type="submit">Sign Up</button>
+          <button className="submit-button" type="submit">Sign Up</button>
         </form>
       </div>
       </div>

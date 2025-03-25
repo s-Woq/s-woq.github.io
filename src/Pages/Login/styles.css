@@ -1,20 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Bebas+Neue&family=Kosugi+Maru&family=Lacquer&family=Micro+5&family=Playwrite+DE+Grund:wght@100..400&family=Syncopate:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 .login-box{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 50%;
-    max-height: 90vh;
-    height: 90vh;
-    border-radius: 10px;
-    border:2px solid rgba(20,20,20,.6);
-    background-color: rgba(20,20,20,.4);
+    height: 100vh;
+    width: 50vw;
+    background-color: rgba(236, 233, 233, 0.4);
     gap:20px;
+    left:50%;
+    position: relative;
+    
+    
+    
     
 }
 .ready{
-    font-family: "Kosugi Maru", 'Times New Roman', Times, serif;
+    font-family: "Josefin Sans";
     font-size:1em;
     color:rgb(74, 104, 234);
 
@@ -22,7 +25,7 @@
 
 }
 .Login{
-    font-family: "Kosugi Maru", 'Times New Roman', Times, serif;
+    font-family: "Josefin Sans", 'Times New Roman', Times, serif;
     font-size: 1.5em;
     
 
@@ -31,9 +34,9 @@
 .button-submit{
     position: relative;
     border: 1px solid rgba(74, 104, 23,.3);
-    background-color: rgba(92, 103, 152, 0.4);
+    background-color: rgba(63, 93, 226, 0.4);
     color:white;
-    font-family: "Kosugi Maru", 'Times New Roman', Times, serif;
+    font-family: "Josefin Sans", 'Times New Roman', Times, serif;
     text-align: center;
     padding: 5px;
    
@@ -49,8 +52,8 @@
     justify-content: space-around;
 }
 .password , .user{
-    font-family: "Playwrite Deutschland Grundschrift", 'Times New Roman', Times, serif; 
-    color:rgba(249, 179, 88, 0.91);
+    font-family: "Josefin Sans", 'Times New Roman', Times, serif; 
+    /* color:rgba(249, 179, 88, 0.91); */
 }
 .user-input ,.password-input{
     margin: 10px;
@@ -63,30 +66,24 @@
 .user-input:hover ,.password-input:hover{
     transform: scale(1.1);
     transition: 0.5s ease-in-out;
-    border: 1px solid rgba(18, 193, 251, 0.9)
+    
     
 }
 .arcnoir{
+    background-color: rgba(236, 233, 233, 1);
     width:50vw;
-    height:90vh;
-    background-image: url("https://i.imgur.com/tMDkWU2.jpeg");
-    border-radius: 10px;
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: 50em;
-    filter:blur();
-    right: 0;
+    height:100vh;
     position: absolute;
-    /* border : 1px solid blue; */
     overflow: hidden;
     text-align: center;
     justify-content: center;
-    color:blanchedalmond;
-    font-family: "Micro 5";
+    
     
 
 
 }
+
+
 .overlay {
     position: absolute;
     top: 0;
@@ -98,3 +95,38 @@
     z-index: 1;
   
   }
+
+  .icon-b{
+    font-family: "Josefin Sans", 'Times New Roman', Times, serif;
+    font-size: 4em;
+    display: flex;
+    /* color:rgba(240, 160, 57, 0.91); */
+    flex-direction: column;
+    justify-content: center start;
+    align-items: center;
+    gap: 20px;
+    width: 50vw;    
+    height: 90vh;
+    position: absolute;
+    overflow: hidden;
+    text-align: center;
+    font-size: 4em;
+  }
+
+
+.footer-options{
+    display: flex;
+    flex-direction: row;
+    /* border:  1px solid black; */
+    position: relative;
+    justify-content:baseline;
+    top:93%;
+    height:2em ;
+    font-size: 1em;
+    font-family: "Josefin-Sans",arial;
+    justify-content: space-around;
+    gap:60px;
+    text-align: center;
+    align-items: center;
+    
+}

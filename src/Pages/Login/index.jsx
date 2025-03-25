@@ -1,129 +1,132 @@
 import { useState } from "react";
-import "./styles.css" 
-import  Navbar  from "../../Components/Navbar"
-const Signin = ()=>{
-    //This is so i can save the Data in these
-    const [username,setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    const [errorMessage, setErrorMessage] = useState("")
-    const [signInData,  setSignInData] = useState({
-        email:"",
-        password: ""
-    })
-    //Errors
-    const [errors , setErrors] =useState({
-        email:"",
-        password : "", 
-    })
+import "./styles.css"; 
 
-    const handleChange = (e) =>{
-        const {name,value} = e.target;
-        setSignInData({
-            ...signInData,
-            [name]:value,
-        });
-    };
+const Signin = () => {
+  // State to manage form data and errors
+  const [signInData, setSignInData] = useState({
+    username: "",
+    password: ""
+  });
 
-    //Validation
-    const ValidateSignIn = ()=>{
-        const newErrors = {};
-        if (!formData.email) newErrors.email =  "Email is requiered";
-        if (!signInData.password) newErrors.password = "Password Requiered"
-        setErrors(newErrors)
-        return Object.keys(newErrors).length === 0 ;
-    }
+  const [errors, setErrors] = useState({
+    username: "",
+    password: ""
+  });
 
-    const handleSumbit = async (e) =>{
-        e.preventDefault() //Avoid ur page from reloading
-    
-    //Validate Before Submission 
-    if (!ValidateSignIn()) return // Stop if signin validation fails
+  // Handle form input changes
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setSignInData({
+      ...signInData,
+      [name]: value
+    });
+  };
 
-    //api call simulatino
-    const isValidUser = await fakeSignInApi(formData.email , formData.password);
-    if(isValidUser){
-        alert("Succesfully signed in")
-        // You can redirect to another page, like the dashboard
-      // Example: history.push('/dashboard');   
+  // Validation function for SignIn
+  const validateSignIn = () => {
+    const newErrors = {};
+    if (!signInData.username) newErrors.username = "Username is required";
+    if (!signInData.password) newErrors.password = "Password is required";
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
-    } else{
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Validate before submission
+    if (!validateSignIn()) return; // Stop if validation fails
+
+    try {
+      const response = await fetch('http://localhost:5000/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(signInData)
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert(data.message);  // Display success message
+        // Redirect to another page if needed
+        // Example: window.location.href = '/dashboard'; 
+      } else {
         setErrors({
-            email:"",
-            password:  "Invalid credentials , please try Again! "
-        })
-
-    }
-    };
-
-
-
-
-    const fakeSignInApi = (email, password) => {
-        return new Promise((resolve) => {
-          setTimeout(() => {
-            // Mock check: valid email/password pair
-            const validEmail = 'user@example.com';
-            const validPassword = 'password123';
-            resolve(email === validEmail && password === validPassword);
-          }, 1000);
+          username: "",
+          password: data.message || "Invalid credentials, please try again!"
         });
-      };
-    
-      return (
-        <div className ="w-full h-full p-0 m-0 overflow-hidden ">
-                  <Navbar />
-                  {/* < Countdown /> */}
-                  <div className="body-login flex">
-                  <div className="login-box w-1/2 h-full border border-white justify-center align-middle text-left ">
-                    <p className="ready text-gray-600">Ready To Start Arc Noir?</p>
-                    {/* <p className="Hop text-white">Hop into your account, Show ur compromise with yourself!</p> */}
-                    <h2 className="Login text-white">Login</h2>
-                    <form onSubmit={handleSumbit}>
-                      <div className="forms">
-                          <div>
-                             <label className="user text-white" htmlFor="username">Username</label><br />
-                             <input
-                             className="user-input" 
-                             type="text"
-                             id="username"
-                             value={username}
-                             onChange={(e)=>setUsername(e.target.value)}
-                             required 
-                              />   
-                          </div>
-                          <div>
-                            <label className="password text-white" htmlFor="password">Password</label><br />
-                            <input 
-                            className="password-input"
-                            type="password"
-                            id="password"
-                            value={password}
-                            onChange={(e)=> setPassword(e.target.value)}
-                            required
-                            />
-                          
-                          </div>
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+      setErrors({
+        username: "",
+        password: "An error occurred. Please try again later."
+      });
+    }
+  };
 
-                          {errorMessage && <div className="error-message">{errorMessage}</div>}
-                          <button className="button-submit" type="submit">Log in </button>
-                        </div>
-                    </form>
-                    </div>
-                    <div className="arcnoir">
-                      <div className="background-image"></div>
-                      <div className="overlay"></div>
-                      <p>Focus on What’s Achievable</p>
-                      <h2>Focused Activities for Quick Wins</h2>
-                      <p>Outdoor Challenges
-                      </p>
-                      <h2>Build Momentum for Achievable Goals</h2>
-                      <p>Solidify Habits <br />
+  return (
+    <div className="w-full h-full p-0 m-0 overflow-hidden">
+      <div className="body-login flex">
+        <div className="login-box h-full border border-white justify-center align-middle text-left">
+          <h2 className="Login text-white">
+            <ion-icon name="pin-outline"></ion-icon> Login
+          </h2>
+          <form onSubmit={handleSubmit}>
+            <div className="forms">
+              <div>
+                <label className="user text-white" htmlFor="username">Username</label><br />
+                <input
+                  className="user-input"
+                  type="text"
+                  id="username"
+                  name="username"
+                  value={signInData.username}
+                  onChange={handleChange}
+                  required
+                />
+                {errors.username && <div className="error-message">{errors.username}</div>}
+              </div>
+              <div>
+                <label className="password text-white" htmlFor="password">Password</label><br />
+                <input
+                  className="password-input"
+                  type="password"
+                  id="password"
+                  name="password"
+                  value={signInData.password}
+                  onChange={handleChange}
+                  required
+                />
+                {errors.password && <div className="error-message">{errors.password}</div>}
+              </div>
 
-                      Set and Hit Milestones.</p>
-                    </div>
-                    </div>
+              <button className="button-submit" type="submit">Log in</button>
+            </div>
+          </form>
         </div>
-      )
-    
+
+        <div className="arcnoir">
+          <div className="icon-b">
+            <p>You are all set</p>
+            <ion-icon name="battery-dead-outline"></ion-icon>
+            <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+            <ion-icon name="battery-half-outline"></ion-icon>
+            <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+            <ion-icon name="battery-full-outline"></ion-icon>
+          </div>
+
+          <div className="footer-options">
+            <a href="../"><div><p><ion-icon name="return-down-back-outline"></ion-icon> Home</p></div></a>
+            <a href="../signup"><div><p>Sign up</p></div></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
+
 export default Signin;

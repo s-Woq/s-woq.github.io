@@ -2,7 +2,7 @@ import {useRoutes , BrowserRouter} from "react-router-dom";
 import Home from "./Pages/Home";
 import Navbar from './Components/Navbar';
 import Compare from "./Pages/Compare";
-import Search from "./Pages/Search";
+import Search from "./Pages/Start";
 import Login from './Pages/Login';
 import Signup from "./Pages/Signup";
 import NotFound from "./Pages/NotFound";
@@ -23,7 +23,7 @@ const AppRoutes = ()=>{
 
 
 function App() {
-  
+
 return(
   <div>
     <BrowserRouter>
