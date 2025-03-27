@@ -1,0 +1,20 @@
+/* Prevent horizontal scrolling on the entire page */
+html, body {
+  height: 100%; /* Ensure body takes up full height of the viewport */
+  margin: 0; /* Removes default margin */
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+  overflow-y: scroll; /* Allows vertical scrolling */
+}
+
+/* Universal box-sizing rule */
+* {
+  box-sizing: border-box; /* Ensures padding and borders don't affect width/height */
+}
+
+/* Landing page container */
+div {
+  background-color: rgb(20, 20, 20);
+  width: 100vw; /* Full viewport width */
+  height: 270vh; /* Full page height (270% of the viewport height) */
+  overflow: hidden; /* Prevents internal scroll within the div */
+}

@@ -1,0 +1,114 @@
+/* Prevent horizontal scrolling on the entire page */
+html, body {
+    height: 100%; /* Allow body to take full viewport height */
+    margin: 0; /* Remove default margin */
+    overflow: hidden; /* Prevent scrolling on the entire page */
+}
+
+/* Form container for Add Page */
+.form-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    overflow-y: auto; /* Allow vertical scrolling inside this div */
+}
+
+/* Back arrow styling */
+.backarrow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+}
+
+.backarrow:hover {
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    transition: ease-in-out 1s;
+}
+
+/* Form container styling */
+.form-cnt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    width: 70%;
+    height: 90%;
+    border-radius: 20px;
+    padding: 20px;
+    transition: ease-in-out 1s;
+    overflow-y: auto; /* Allow internal scrolling */
+}
+
+/* Form box styling */
+.form-bx {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 30em; /* Ensures it doesn't grow too large */
+    gap: 40px;
+    min-height: 60vh; /* Minimum height for better responsiveness */
+    overflow-y: auto; /* Allow scrolling within the form box */
+}
+
+/* Text styling in form */
+.txt-frm p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4em;
+    word-wrap: break-word; /* Fixes text wrapping */
+    margin: 0 auto;
+    text-align: center; /* Centering text */
+}
+
+/* Form text area styling */
+.txt-frm {
+    width: 100%;
+    height: 20%;
+}
+
+/* Main form styling */
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    height: 80vh;
+}
+
+/* Input field styling */
+.inp {
+    background-color: white;
+    border-radius: 30px;
+    width: 100%; /* Responsive width */
+    max-width: 18em; /* Set a max width for larger screens */
+    height: 4em;
+    padding: 20px;
+}
+
+/* Submit button styling */
+.submit-btn {
+    background-color: #6ac292;
+    width: 100%; /* Responsive width */
+    max-width: 10em; /* Max width for button */
+    height: 3em;
+    border-radius: 30px;
+    transition: ease-in-out 1s;
+}
+
+.submit-btn:hover {
+    background-color: #25b968;
+    transform: scale(1.1);
+    transition: ease-in-out 1s;
+}

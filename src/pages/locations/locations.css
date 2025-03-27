@@ -1,0 +1,101 @@
+.mc-locations {
+    border: 1px solid blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh; /* Centering the entire container */
+}
+
+.sc-locations {
+    border: 1px solid red;
+    position: relative;
+    width:60vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgb(20, 20, 20);
+    padding: 30px 0;
+    margin-top: 60px;
+    border-radius: 5px;
+    box-shadow: 20px 35px 35px rgba(0, 0, 0, 0.5);
+}
+
+.clist {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 250px;
+    justify-items: stretch;
+    animation: animation 12s linear infinite;
+}
+
+.clist img {
+    width: 200px;
+    height: 270px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+@keyframes animation {
+    to {
+        transform: translateX(calc(-4 * 250px));
+    }
+}
+
+.info {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 700px;
+}
+
+.content div {
+    margin: 0 20px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+}
+
+#arrow {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    width: 700px;
+}
+
+button.prev, button.next {
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button.prev:hover, button.next:hover {
+    background-color: #444;
+}
+
+#arrow {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid red;
+    height:2em;
+}
+#arrow button {
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    background-color: #033a15;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+#arrow button:hover {
+    background-color: #444;
+}

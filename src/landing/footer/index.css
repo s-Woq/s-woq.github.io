@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sigmar&display=swap');
+.footer{
+    width:100vw;
+    height: 35vh;
+    background-color: rgb(135, 141, 110);
+    /* border:1px solid white; */
+    position: relative;
+    font-family: "Montserrat", arial;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.contact{
+    /* border:1px solid red; */
+    background-color: transparent;
+    font-size: 10px;
+    color:black;
+    text-align: center;
+    align-items: center;
+
+}
+.social{
+    /* border:1px solid red; */
+    background-color: transparent;
+    display: inline-block;
+    justify-content: row;
+
+
+}
+.footer p{
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+   
+}
